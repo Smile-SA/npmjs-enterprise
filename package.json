@@ -1,12 +1,32 @@
 {
-  "name": "npmjs-proxy",
-  "description": "Proxy for npmjs",
+  "name": "npmjs-enterprise",
+  "description": "npmjs for enterprise: proxies requests to a locally-hosted central-registry-replication CouchDB instance, caches attachments (.tgz files) on the File System and allows to publish private packages",
   "author": "Maxime ROBERT <marob@smile.fr>",
   "version": "0.0.1",
+  "keywords": [
+    "npm",
+    "registry",
+    "repository",
+    "proxy",
+    "replication",
+    "enterprise",
+    "private",
+    "attachment"
+  ],
+  "homepage": "http://marob.github.io/npmjs-enterprise",
+  "bugs": {
+    "url": "https://github.com/marob/npmjs-enterprise/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/marob/npmjs-enterprise.git"
+  },
+  "license": "Apache 2",
   "dependencies": {
     "request": "2.40.0",
     "mkdirp": "0.5.0",
     "string.prototype.endswith": "0.2.0",
-    "log4js": "0.6.20"
+    "log4js": "0.6.20",
+    "replacestream": "0.1.3"
   }
 }

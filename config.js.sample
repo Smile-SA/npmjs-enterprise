@@ -1,0 +1,18 @@
+var config = {};
+
+// Server listening port (defaults to 1337 if not specified)
+// config.port = 1337;
+
+// URL of the locally-hosted couchDB instance
+config.couchURL = "http://localhost:5984/registry/_design/app/_rewrite";
+
+// URL used for rewriting tarball (attachment) URLs. Should match the URL of the proxy
+config.proxyURL = "http://localhost:1337";
+
+// Path on the File System where attachments are saved
+config.attachmentPath = "/tmp/npmAttachments";
+
+// URL of the centrally-hosted couchDB instance (defaults to "http://registry.npmjs.org" if not specified)
+// config.centralURL = "http://registry.npmjs.org";
+
+module.exports = config;
