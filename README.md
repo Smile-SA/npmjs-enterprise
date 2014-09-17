@@ -1,6 +1,6 @@
 # npmjs-enterprise
 
-npmjs for enterprise
+npmjs for enterprise: proxies requests to a locally-hosted central-registry-replication CouchDB instance, caches attachments (.tgz files) on the File System and allows to publish private packages
 
 ## Features
 
