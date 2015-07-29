@@ -39,23 +39,27 @@ var tarballRegexp = new RegExp('^\\/([^/]+)\\/-\\/[^/]+?-' + versionRegexp + '\\
 http.createServer(function (req, resp) {
   logger.debug(req.url);
 
-  if (req.url.match(tarballRegexp) != null) {
-    manageAttachment(req, resp);
-  } else {
-    logger.debug(req.url + ' : forwarding to couchDB');
-
-    // Read AND Write stream
-    var couchDBStream = request(config.couchURL + req.url);
-    // Proxy the request to couchDB
-    req.pipe(couchDBStream);
-    // We only replace attachment URLs in GET
-    if (req.method === 'GET') {
-      logger.debug('Responding with attachment URL replacement');
-      couchDBStream.pipe(replacestream(config.centralURL, config.proxyURL)).pipe(resp);
+  try {
+    if (req.url.match(tarballRegexp) != null) {
+      manageAttachment(req, resp);
     } else {
-      couchDBStream.pipe(resp);
+      logger.debug(req.url + ' : forwarding to couchDB');
+
+      // Read AND Write stream
+      var couchDBStream = request(config.couchURL + req.url);
+      // Proxy the request to couchDB
+      req.pipe(couchDBStream);
+      // We only replace attachment URLs in GET
+      if (req.method === 'GET') {
+        logger.debug('Responding with attachment URL replacement');
+        couchDBStream.pipe(replacestream(config.centralURL, config.proxyURL)).pipe(resp);
+      } else {
+        couchDBStream.pipe(resp);
+      }
     }
+  } catch (error) {
+    logger.error(error);
   }
 }).listen(config.port, function () {
-    logger.info('Server running at http://localhost:%s with config:\n%s', config.port, JSON.stringify(config, null, 4));
-  });
+  logger.info('Server running at http://localhost:%s with config:\n%s', config.port, JSON.stringify(config, null, 4));
+});
