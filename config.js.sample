@@ -13,6 +13,6 @@ config.proxyURL = "http://localhost:1337";
 config.attachmentPath = "/tmp/npmAttachments";
 
 // URL of the centrally-hosted couchDB instance (defaults to "http://registry.npmjs.org" if not specified)
-// config.centralURL = "http://registry.npmjs.org";
+// config.centralURL = "https://registry.npmjs.org";
 
 module.exports = config;
