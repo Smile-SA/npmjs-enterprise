@@ -25,7 +25,6 @@
   "dependencies": {
     "request": "2.67.0",
     "mkdirp": "0.5.1",
-    "string.prototype.endswith": "0.2.0",
     "log4js": "0.6.29",
     "replacestream": "4.0.0"
   }
