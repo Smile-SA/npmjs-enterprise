@@ -13,7 +13,7 @@ var tarballRegexp = new RegExp('^(\\/@([^/]+))?\\/([^/]+)\\/-\\/[^/]+?-' + versi
 var moduleRegexp = new RegExp('^\\/[^/]+$');
 
 process.on('uncaughtException', function(err) {
-  logger.error('Uncaught exception: %s', err);
+  logger.error('Uncaught exception: %s', JSON.stringify(err, null, 4));
 });
 
 http.createServer(function(req, resp) {
