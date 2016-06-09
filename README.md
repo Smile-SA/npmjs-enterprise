@@ -1,22 +1,16 @@
 # npmjs-enterprise
 
-npmjs for enterprise: proxies requests to a locally-hosted central-registry-replication CouchDB instance, caches attachments (.tgz files) on the File System and allows to publish private packages
+npmjs for enterprise: caches JSONs and attachments (.tgz files) on the File System
 
 ## Features
 
    * central registry downtime free
    * reduces bandwidth usage
    * speeds up packages download
-   * private packages
 
 ### Architecture
 
 ![Architecture diagram](/resources/architecture.png)
-
-## Prerequisites
-
-   * install npm-registry-couchapp (follow https://github.com/npm/npm-registry-couchapp#installing)
-   * replicate the skimdb registry (follow https://github.com/npm/npm-registry-couchapp#replicating-the-registry)
 
 ## Install
 
