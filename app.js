@@ -16,6 +16,8 @@ process.on('uncaughtException', function(err) {
   logger.error('Uncaught exception: %s', JSON.stringify(err, null, 4));
 });
 
+api.initChangesSync();
+
 http.createServer(function(req, resp) {
   try {
     var isGet = req.method === 'GET';

@@ -15,4 +15,7 @@ config.attachmentPath = "/tmp/npmAttachments";
 // URL of the centrally-hosted couchDB instance (defaults to "http://registry.npmjs.org" if not specified)
 // config.centralURL = "https://registry.npmjs.org";
 
+// URL of the centrally-hosted skimdb couchDB instance (defaults to "https://skimdb.npmjs.com/registry" if not specified)
+// config.skimdbURL = "https://skimdb.npmjs.com/registry";
+
 module.exports = config;
