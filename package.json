@@ -23,7 +23,7 @@
   },
   "license": "Apache 2",
   "dependencies": {
-    "concurrent-couch-follower": "marob/concurrent-couch-follower#patch-1",
+    "concurrent-couch-follower": "1.1.0",
     "log4js": "0.6.29",
     "mkdirp": "0.5.1",
     "replacestream": "4.0.0",
