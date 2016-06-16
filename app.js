@@ -21,11 +21,14 @@ api.initChangesSync();
 http.createServer(function(req, resp) {
   try {
     var isGet = req.method === 'GET';
-    var isTarball = req.url.match(tarballRegexp) != null;
+    var tarballMatch = req.url.match(tarballRegexp);
+    var isTarball = tarballMatch != null;
     var isModule = req.url.match(moduleRegexp) != null;
 
     if (isGet && isTarball) {
-      api.manageAttachment(req, resp);
+      var module = tarballMatch[3];
+      var version = tarballMatch[4];
+      api.manageAttachment(req, resp, module, version);
     } else if (isGet && isModule) {
       api.manageModule(req, resp);
     } else {
