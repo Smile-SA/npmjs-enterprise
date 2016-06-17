@@ -21,6 +21,9 @@
     "type": "git",
     "url": "http://github.com/marob/npmjs-enterprise.git"
   },
+  "scripts": {
+    "test": "jasmine"
+  },
   "license": "Apache 2",
   "dependencies": {
     "concurrent-couch-follower": "1.1.0",
@@ -28,5 +31,8 @@
     "mkdirp": "0.5.1",
     "replacestream": "4.0.0",
     "request": "2.67.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
   }
 }
