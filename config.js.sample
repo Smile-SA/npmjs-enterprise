@@ -12,7 +12,7 @@ config.attachmentPath = "/tmp/npmAttachments";
 // URL of the centrally-hosted couchDB instance (defaults to "http://registry.npmjs.org" if not specified)
 // config.centralURL = "https://registry.npmjs.org";
 
-// URL of the centrally-hosted skimdb couchDB instance (defaults to "https://skimdb.npmjs.com/registry" if not specified)
-// config.skimdbURL = "https://skimdb.npmjs.com/registry";
+// URL of the centrally-hosted replication couchDB instance (defaults to "https://replicate.npmjs.com" if not specified). Beware: if using another couchDB instance, you may not replicate private module (https://github.com/npm/registry/issues/13#issuecomment-228131885)
+// config.syncURL = "https://replicate.npmjs.com";
 
 module.exports = config;

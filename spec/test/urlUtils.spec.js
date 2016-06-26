@@ -9,7 +9,6 @@
       expect(module).toBeTruthy();
       expect(module.name).toBe('grunt');
       expect(module.version).not.toBeDefined();
-      expect(module.scoped).toBeFalsy();
     });
 
     it('of "/grunt/" should detect module "grunt"', function() {
@@ -17,7 +16,6 @@
       expect(module).toBeTruthy();
       expect(module.name).toBe('grunt');
       expect(module.version).not.toBeDefined();
-      expect(module.scoped).toBeFalsy();
     });
 
     it('of "/grunt/1.0.0" should detect module "grunt" and version "1.0.0"', function() {
@@ -25,7 +23,6 @@
       expect(module).toBeTruthy();
       expect(module.name).toBe('grunt');
       expect(module.version).toBe("1.0.0");
-      expect(module.scoped).toBeFalsy();
     });
 
     it('of "/grunt/1.0.0/" should detect module "grunt" and version "1.0.0"', function() {
@@ -33,7 +30,6 @@
       expect(module).toBeTruthy();
       expect(module.name).toBe('grunt');
       expect(module.version).toBe("1.0.0");
-      expect(module.scoped).toBeFalsy();
     });
 
     it('of "/@jenkins-cd%2fjs-extensions" should detect module "@jenkins-cd%2fjs-extensions"', function() {
@@ -41,7 +37,6 @@
       expect(module).toBeTruthy();
       expect(module.name).toBe('@jenkins-cd%2fjs-extensions');
       expect(module.version).not.toBeDefined();
-      expect(module.scoped).toBeTruthy();
     });
 
     it('of "/@jenkins-cd%2fjs-extensions/" should detect module "@jenkins-cd%2fjs-extensions"', function() {
@@ -49,7 +44,6 @@
       expect(module).toBeTruthy();
       expect(module.name).toBe('@jenkins-cd%2fjs-extensions');
       expect(module.version).not.toBeDefined();
-      expect(module.scoped).toBeTruthy();
     });
 
     it('of "/not/a/module" should detect module "grunt"', function() {
