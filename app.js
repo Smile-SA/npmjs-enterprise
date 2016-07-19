@@ -16,6 +16,8 @@ api.initChangesSync();
 
 http.createServer(function(req, resp) {
   try {
+    var startDate = Date.now();
+
     var isGet = req.method === 'GET';
 
     var module = urlUtils.module(req.url);
@@ -28,6 +30,10 @@ http.createServer(function(req, resp) {
     } else {
       api.proxyToCentralRepository(req, resp);
     }
+
+    resp.on('finish', function() {
+      logger.trace('%s: response in %sms', req.url, Date.now() - startDate);
+    });
   } catch (error) {
     logger.error(error);
   }
