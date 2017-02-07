@@ -16,6 +16,6 @@ config.attachmentPath = "/tmp/npmAttachments";
 // config.syncURL = "https://replicate.npmjs.com";
 
 // Delay between module change detection (new version) and json download. It is useful to prevent downloading a json that is not up to date yet as we do not detect change from the same server as we download the json
-// config.delay = 1000;
+// config.delay = 5000;
 
 module.exports = config;
